@@ -3,20 +3,17 @@ import ReactDOM from "react-dom/client";
 
 // JSX Element => Babel transpiles => ReactElement => ReactElement(JS Object) => HTMLELement(render)
 
-const heading = <h1 id="heading">React from JSX</h1>;
+const Title = () => {
+  return <h1 className="heading">Title</h1>;
+};
 
-//React Functional Component
+//Component Composition = using component in another component
 const HeadingComponent = () => (
   <div>
+    <Title />
     <h1 className="heading">React Functional Component</h1>
   </div>
 );
-//No need to write return in the above function and we have parenthesis, below is another way of writing  same code
-/*
-const HeadingComponent = () => {
-  return <h1 className="heading">React Functional Component</h1>
-};
-*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
