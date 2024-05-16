@@ -5,9 +5,19 @@ import ReactDOM from "react-dom/client";
 
 const heading = <h1 id="heading">React from JSX</h1>;
 
-console.log(heading); // this is an object which is created by React.createElement.
+//React Functional Component
+const HeadingComponent = () => (
+  <div>
+    <h1 className="heading">React Functional Component</h1>
+  </div>
+);
+//No need to write return in the above function and we have parenthesis, below is another way of writing  same code
+/*
+const HeadingComponent = () => {
+  return <h1 className="heading">React Functional Component</h1>
+};
+*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
-// object is passed to render function. Render function will convert it into html element form and put it inside root div which is understood by browser(HTML).
+root.render(<HeadingComponent />);
