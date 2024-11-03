@@ -1,3 +1,46 @@
-.heading {
-  color: red;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items > ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.res-card {
+  width: 250px;
+  padding: 5px;
+}
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-btn {
+  margin: 10px;
+  padding: 5px;
+  cursor: pointer;
 }
