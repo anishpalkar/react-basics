@@ -12,7 +12,7 @@ const Body = () => {
     useState([]);
   //on change in state variable React re-renders the whole component in Virtual DOM with constructing a new tree with updates, it will compare both the old and newly constructed tree (Diff algo) and then it will only update "changed part"(diffed) in actual DOM.
 
-  //below useEffect callback is called after the component renders itself first time (see Header.js)
+  //below useEffect callback is called after the component renders itself first time in actual DOM (see Header.js)
   useEffect(() => {
     fetchData();
   }, []);

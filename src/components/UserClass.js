@@ -1,9 +1,12 @@
 import React from "react";
 
 class UserClass extends React.Component {
+  // Functional Component => a function which returns jsx
+  //Class Component=> a class where render() return jsx
   constructor(props) {
     super(props);
-    //this.props is set by the super class
+    //this.props is set by the super class. Taken care to set in super i.e Component constructor.
+    console.log(this.props.name + "Child Constructor");
 
     //best place to create state when we create instance of the class component
     //state is reserved keyword, it will contain all the state variables here only which are used in component. Its an object which holds all the state variables
@@ -12,9 +15,16 @@ class UserClass extends React.Component {
       count2: 1,
     };
   }
-  // Functional Component => a function which returns jsx
-  //Class Compoent=> a class where render() return jsx
+
+  componentDidMount() {
+    //it is called after component is rendered initially (completes mounting on dom)
+    console.log(this.props.name + "Child ComponentDidMount");
+
+    //API call
+  }
+
   render() {
+    console.log(this.props.name + "Child Render");
     const { name, location } = this.props;
     const { count, count2 } = this.state;
     return (
