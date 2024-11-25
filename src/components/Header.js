@@ -32,7 +32,7 @@ const Header = () => {
             <Link to="/about">About Us</Link>
           </li>
           {/* We should never use <a> to redirect in React, because it will reload the page.
-            Link component given by react-router-dom should be used & it is superpower which doesn't reload the page.
+            Link component given by react-router-dom should be used & it is superpower which doesn't reload the page. Link is a wrapper over <a>, internally link still uses <a> tag only because browser at the end understand <a> but it keeps track of all routes or href we can say.
           */}
           <li>
             <Link to="/contact">Contact Us</Link>
