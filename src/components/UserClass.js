@@ -13,20 +13,38 @@ class UserClass extends React.Component {
     this.state = {
       count: 0,
       count2: 1,
+      githubData: {},
     };
   }
 
-  componentDidMount() {
-    //it is called after component is rendered initially (completes mounting on dom)
+  async componentDidMount() {
+    //it is called after component is rendered initially (completes mounting on dom) only once
     console.log(this.props.name + "Child ComponentDidMount");
+    this.timer = setInterval(() => console.log("React OP"), 2000);
 
+    const data = await fetch("https://api.github.com/users/anishpalkar");
+    const json = await data.json();
+    console.log(json);
+    this.setState({ githubData: json });
     //API call
+  }
+
+  //called after component re-renders after state or props change in dom everytime
+  componentDidUpdate() {
+    console.log(this.props.name + "Child ComponentDidUpdate");
+  }
+
+  //executed just before component is going to be removed from DOM i.e. unmounted from dom
+  componentWillUnmount() {
+    console.log(this.props.name + "Child ComponentWillUnmount");
+    clearInterval(this.timer);
   }
 
   render() {
     console.log(this.props.name + "Child Render");
     const { name, location } = this.props;
     const { count, count2 } = this.state;
+    const { login: githubName } = this.state.githubData;
     return (
       <div className="user-card">
         <h4>Count : {count}</h4>
@@ -45,6 +63,8 @@ class UserClass extends React.Component {
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h3>Hobbies: Coding</h3>
+
+        <h3>GitHub Name : {githubName}</h3>
       </div>
     );
   }

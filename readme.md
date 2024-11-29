@@ -48,3 +48,8 @@ They are normal JS utility functions written inside react module
   https://github.com/acdlite/react-fiber-architecture?tab=readme-ov-file
 
 - useEffect()
+
+# 2 types of Routing in web apps
+
+- Client Side Routing - no network call made, everything is on Client Side
+- Server Side Routing
