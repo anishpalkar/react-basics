@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 // what should we give in path ./components/Header or ./components/Header.jsx? It doesn't matter, react treats it as a js file only
 
 // JSX Element => Babel transpiles => ReactElement => ReactElement(JS Object) => HTMLELement(render)
@@ -38,6 +39,7 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <Body /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/restaurant/:resId", element: <RestaurantMenu /> },
     ],
     errorElement: <Error />,
   },
