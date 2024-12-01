@@ -1,4 +1,4 @@
-// React knows this is a hook because name starts from use... (rule)
+// React knows this is a hook because name starts from use... (recommended not mandatory, linters force us to use "use..." convention)
 // We can on use hooks inside another hooks or components, not anywhere else (rule)
 
 import { useEffect, useState } from "react";
