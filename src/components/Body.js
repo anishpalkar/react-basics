@@ -48,15 +48,16 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className=" flex items-center">
           <input
-            className="search-box"
+            className="border border-black border-solid h-10 rounded-md ml-2"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="py-2 px-4 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               console.log(searchText);
               const filteredList = restaurantToDisplay.filter((restaurant) =>
@@ -69,20 +70,20 @@ const Body = () => {
           >
             Search
           </button>
+          <button
+            className="bg-gray-100 px-4 py-2 rounded-lg"
+            onClick={() => {
+              const filteredList = restaurantToDisplay.filter(
+                (restaurant) => restaurant?.info?.avgRating > 4.2
+              );
+              setFilteredRestaurantToDisplay(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = restaurantToDisplay.filter(
-              (restaurant) => restaurant?.info?.avgRating > 4.5
-            );
-            setFilteredRestaurantToDisplay(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap gap-4">
         {filteredRestaurantToDisplay.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />

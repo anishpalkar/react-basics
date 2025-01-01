@@ -22,12 +22,12 @@ const Header = () => {
   useEffect(() => console.log("useEffect called"), [btnName]);
 
   return (
-    <div className="header">
+    <div className="flex justify-between items-center sticky top-0 bg-pink-100 shadow-md mb-2">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-24" src={LOGO_URL} />
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="flex gap-4">
           <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
